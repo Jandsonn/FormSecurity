@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar</title>
+    <title>Edit</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
 integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -19,36 +19,37 @@ integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLAS
     
     <div class="d-flex justify-content-center">
   <div class=" justify-content-center"> 
-    <form action="/people/insertpeople"  method="POST"  action="#" onsubmit="valid()" class="form" >
+    <form action=""  method="POST"  action="#" onsubmit="valid()" class="form" >
         <div class="col-md-3  text-center">
-            <img class="d-flex justify-content-center" src="img/alpha.png" alt="Cadastro">
+           <img src="https://img.icons8.com/fluency/48/000000/edit-user-male.png"/>
+            <p>editar</p>
         </div>
 
         <div class="form-group justify-content-center">
         <label for="name" class="col-sm-6 col-form-label">Nome</label>
         <div class="col-sm-15">
-            <input id="name" type="text" autocomplete="off" name="name" class="form-control" placeholder="Name">
+            <input id="name" type="text" autocomplete="off" name="name" class="form-control" value="{{peop.name}}" placeholder="Name">
         </div>
        
         <div class="form-group">
         <label for="email" class="col-sm-5 col-form-label">e-mail</label>
         <div class="col-sm-15">
-            <input aria-required="true" autocomplete="off" name="email" placeholder="e-mail" type="email" class="form-control" >
+            <input aria-required="true" value="{{peop.email}}" autocomplete="off" name="email" placeholder="e-mail" type="email" class="form-control" >
         </div>
 
         <div class="form-group">
         <label for="age" class="col-sm-5 col-form-label">Idade</label>
         <div class="col-sm-15">
-            <input id="idade" aria-required="true" autocomplete="off" name="age" placeholder="Idade" type="number" class="form-control">
+            <input id="idade" value="{{peop.age}}" aria-required="true" autocomplete="off" name="age" placeholder="Idade" type="number" class="form-control">
         </div>
 
         <div class="form-group">
         <label for="taxpayer" class="col-sm-5 col-form-label">CPF</label>
         <div class="col-sm-15">
-         <input type="text" required="required" name="taxpayer" maxlength="11" class="form-control" pattern="[0-9]+$" />
+         <input type="text" value="{{peop.taxpayer}}" required="required" name="taxpayer" maxlength="11" class="form-control" pattern="[0-9]+$" />
         </div>
         <br>
-        <button class="btn btn-dark col-sm-12" "col-sm-12">Cadastrar</button>
+        <button class="btn btn-danger col-sm-12" "col-sm-3">Editar</button>
         </div>        
     </form>
     <script>

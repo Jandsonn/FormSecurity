@@ -1,3 +1,4 @@
+const { query } = require('express');
 const express = require('express');
 const exphbs = require('express-handlebars')
 const mysql = require('mysql')
@@ -36,7 +37,60 @@ app.post('/people/insertpeople',(req,res) => {
          }
          res.redirect('/')
      })
+})
 
+app.get('/people', (req,res) => {
+    const sql = "SELECT * FROM people"
+    
+    conn.query(sql, function(err, data){
+        
+        if(err){
+            console.log(err)
+            return
+        }
+
+        const people = data
+
+        console.log(people)
+
+        res.render('people',{people})
+
+    })
+})
+
+app.get('/people/:id',(req,res) =>{
+    const id = req.params.id
+
+    const sql = `SELECT * FROM  people where id = ${id}`
+
+    conn.query(sql, function(err, data){
+        if(err){
+            console.log(err)
+            return
+        }
+
+        const peop = data[0]
+        res.render('peop',{peop})
+    })
+})
+
+
+app.get('/people/edit/:id', (req,res) => {
+    const id = req.params.id
+    
+    const sql =  `SELECT * FROM people WHERE id = ${id}`
+    
+      conn.query(sql, function(err, data){
+        if(err){
+            console.log(err)
+            return
+        }
+
+        const peop = data [0]
+
+        res.render('editpeop' ,{ peop })
+
+    })
 })
 
 const conn = mysql.createConnection({

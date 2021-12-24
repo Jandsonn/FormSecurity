@@ -1,13 +1,36 @@
-*{
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(38%, 44%, 54%);
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+.d-flex{
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(38%, 44%, 54%);
     color: white;
 }
 
-label{
-
-}
-
 .col-sm-15{
 
 }
+
+.botao-detail{
+    color: white;
+    text-decoration: none;
+}
+button{
+    cursor: pointer;   
+}
+
+.carddetail{
+    margin: 0 auto;
+    padding: 50px;
+    margin-top: 30px;
+
+}
+
+
+/*ESTILO NAVBAR*/
+
